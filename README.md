@@ -14,24 +14,24 @@
 
 1- Exploratory data analysis:
 - The training data consists of 84,534 data points. The following bar charts show the distribution of data between different groups.
-
+![Figure_01](https://github.com/snejadi/Starbucks/blob/aca62cdb8b8f26d3e5b75340ce27bca5a441dc9a/figures/fig_01.png?raw=true)
 - The data is evenly distrbuted (balanced) between the treatment (who recieved promotion) and control (that did not recieve a promotion) groups.
-- The distribution of data is severly imbalanced between the purchase and non-purchase groups. This necessiates implementing over-sampling techniques. Two methodologies were further evaluated : a) pandas.DataFrame.sample to generate random samples, and b) [SMOTE](https://imbalanced-learn.org/stable/references/generated/imblearn.over_sampling.SMOTE.html) (Synthetic Minority Oversampling Technique)
-
-- Scaling the data
-- V1-V7
-
+- The distribution of data is severly imbalanced between the purchase and non-purchase groups. This necessiates implementing over-sampling techniques. Two methodologies were further evaluated : a) pandas.DataFrame.sample to generate random samples, and b) [SMOTE](https://imbalanced-learn.org/stable/references/generated/imblearn.over_sampling.SMOTE.html) (Synthetic Minority Oversampling Technique). The SMOTE out performed random re-sampling and the results of SMOTE are presented later.
+- The following bar charts show the range and distribution of features V1 to V7. 
+![Figure_02](https://github.com/snejadi/Starbucks/blob/aca62cdb8b8f26d3e5b75340ce27bca5a441dc9a/figures/fig_02_features.png)
+<img src="https://github.com/snejadi/Starbucks/blob/aca62cdb8b8f26d3e5b75340ce27bca5a441dc9a/figures/fig_02_features.png">
+- Transforming and scaling the features is required prior to the analysis. 
 
 2- Two stage classification:
 - Stage 1: The control group (who did not recieve a promotion) was used and a classifier is trained to classify purchase data. The main purpose of this step is to filter/classify the customers who would purchase the product regardless of recieving a promotion.
 - Stage 2: Initially the trained classifier in stage 1 is used to remove the customers who would purchase the product regardless of recieving a promotion. Next, the filtered data in treatment group is used to train the second classifier that classifies customers who make a purchase only if they recieve a promotion. 
 - The classification includes the following steps: 
-a) SMOTE: oversampling imbalaced data
-b) MinMaxScaler: Scale and translate each feature between zero and one.
-c) PCA: Principal component analysis for dimensionality reduction
-d) KNeighborsClassifier: to perform the actual classification
+i) SMOTE: oversampling imbalaced data
+ii) MinMaxScaler: Scale and translate each feature between zero and one.
+iii) PCA: Principal component analysis for dimensionality reduction
+iv) KNeighborsClassifier: to perform the actual classification
 Similar steps are used for both stages of classification. 
-GridSearchCV is also used to search over parameter values for SMOTE, PCA, and KNeighborsClassifier.
+- GridSearchCV is also used to search over parameter values for SMOTE, PCA, and KNeighborsClassifier.
 
 ## File Description
 <br>The Jupyter Notebook is used for this study that includes the following steps: data extraction, cleansing, transformation, and analysis. 
