@@ -12,7 +12,7 @@
 ## Analysis
 <br> The analysis includes the following steps:
 
-1- Exploratory data analysis:
+### 1- Exploratory data analysis:
 - The training data consists of 84,534 data points. The following bar charts show the distribution of data between different groups.
 ![Figure_01](https://github.com/snejadi/Starbucks/blob/aca62cdb8b8f26d3e5b75340ce27bca5a441dc9a/figures/fig_01.png?raw=true)
 - The data is evenly distrbuted (balanced) between the treatment (who recieved promotion) and control (that did not recieve a promotion) groups.
@@ -21,7 +21,7 @@
 ![Figure_02](https://github.com/snejadi/Starbucks/blob/aca62cdb8b8f26d3e5b75340ce27bca5a441dc9a/figures/fig_02_features.png)
 - The features have different range and distributions. Transforming and scaling the features is required prior to further analysis and classification. 
 
-2- Two stage classification:
+### 2- Two stage classification:
 - Stage 1: The control group (who did not recieve a promotion) was used and a classifier is trained to classify purchase data. The main purpose of this step is to filter/classify the customers who would purchase the product regardless of recieving a promotion.
 - Stage 2: Initially the trained classifier in stage 1 is used to remove the customers who would have purchased the product regardless of recieving a promotion. Next, the filtered data in treatment group is implemented and a second classifier is trained that classifies customers who make a purchase only if they recieve a promotion. 
 - The classification pipeline contains the following steps: 
@@ -29,7 +29,7 @@
   - MinMaxScaler: Scale and translate each feature between zero and one
   - PCA: Principal component analysis for dimensionality reduction
   - KNeighborsClassifier: to perform the classification
-Similar steps are used for both stages of classification, and GridSearchCV is used to facillitate searching over parameter values for SMOTE, PCA, and KNeighborsClassifier.
+<br>Similar steps are used for both stages of classification, and GridSearchCV is used to facillitate searching over parameter values for SMOTE, PCA, and KNeighborsClassifier.
 
 ## File Description
 <br> The Jupyter Notebook file ([Starbucks](https://github.com/snejadi/Starbucks/blob/b4b54972423d321e21b006282fb17e10349785dd/Starbucks.ipynb))for Exploratory data analysis, classification, and validating the results. 
