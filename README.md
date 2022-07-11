@@ -25,10 +25,10 @@
 - Stage 1: The control group (who did not recieve a promotion) was used and a classifier is trained to classify purchase data. The main purpose of this step is to filter/classify the customers who would purchase the product regardless of recieving a promotion.
 - Stage 2: Initially the trained classifier in stage 1 is used to remove the customers who would have purchased the product regardless of recieving a promotion. Next, the filtered data in treatment group is implemented and a second classifier is trained that classifies customers who make a purchase only if they recieve a promotion. 
 - The classification pipeline contains the following steps: 
-  i) SMOTE: over-sampling minority class
-  ii) MinMaxScaler: Scale and translate each feature between zero and one
-  iii) PCA: Principal component analysis for dimensionality reduction
-  iv) KNeighborsClassifier: to perform the classification
+  - SMOTE: over-sampling minority class
+  - MinMaxScaler: Scale and translate each feature between zero and one
+  - PCA: Principal component analysis for dimensionality reduction
+  - KNeighborsClassifier: to perform the classification
 Similar steps are used for both stages of classification, and GridSearchCV is used to facillitate searching over parameter values for SMOTE, PCA, and KNeighborsClassifier.
 
 ## File Description
