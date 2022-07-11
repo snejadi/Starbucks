@@ -29,6 +29,7 @@
   - MinMaxScaler: Scale and translate each feature between zero and one
   - PCA: Principal component analysis for dimensionality reduction
   - KNeighborsClassifier: to perform the classification
+
 <br>Similar steps are used for both stages of classification, and GridSearchCV is used to facillitate searching over parameter values for SMOTE, PCA, and KNeighborsClassifier.
 
 ## File Description
