@@ -42,7 +42,7 @@
 <br>Python 3 is required to run this project. Jupyter Notebook and the following libraries are required to preform the analysis: numpy, pandas, scipy, sklearn, imblearn, random, pickle, stats, matplotlib, and seaborn.
 
 ## Licensing, Acknowledgements
-<br> The author wishes to acknowlwdge Udacity and Starbucks. The data, templates, and the python file to validate the results are provided by [Udacity](https://www.udacity.com/).
+<br> The author wishes to acknowledge Udacity and Starbucks. The data, templates, and the python script for validating the results are provided by [Udacity](https://www.udacity.com/).
 
 ## Author
 <br>[Siavash Nejadi](https://github.com/snejadi/)
